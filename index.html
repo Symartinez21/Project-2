@@ -1,20 +1,146 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Exploration</title>
-		<style>
-			body { margin: 0; }
-		</style>
-	</head>
-	<body>
-		<script src="threecore.js"></script>
-		<script>
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  <head>
+    <meta charset="utf-8" />
+    <title>Art 109 Three.js Pointer Lock Movement Exmaple</title>
+    <link rel="stylesheet" href="../../css/style2.css" />
+    <title>Exploration</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="pointerlockCex.js"></script>
+  <script src="three.module.js"></script>
+  <script src="three.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+    <!--Loading pointer lock example script, as a module script, it will call all the other required sources from the script.-->
+    <script src="../../scripts/client3.js" type="module"></script>
+  </head>
+  <body>
+    <!--These divs contain the overlay text and are made invisible by functions within the client3.js script.-->
+    <div id="blocker">
+      <div id="instructions">
+        <br />
+        <h1>Art 109 Three.js Pointer Lock Controls</h1>
+        <h2 style="font-size:36px">
+          Click To Play
+        </h2>
+        <p class="move-mid">
+          Move: WASD<br />
+          Jump: SPACE<br />
+          Look: MOUSE
+        </p>
+        <p class="move-mid">
+          <a href="../../">Back to main page</a>
+        </p>
+      </div>
+    </div>
+    <h1>
+      <a href="https://showroom.littleworkshop.fr/"> "WebVR Showroom"</a>
+      </h1>
+      <p> I want my experience to look simple yet help the audience imagine they are in the scene as well, which is why I liked WebVR showroom <br>
+        I wrote down the instruction features because it would direct the user on how to interact with the website.</p>
+    <div class="instructions-container">
+         <div class="instructions look" data-ref="look_instructions">
+           <div class="inner">
+             <div class="hand"></div>
+             <div class="copy">Click and drag to look around</div>
+           </div>
+         </div>
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
-		</script>
-	</body>
+         <div class="instructions material" data-ref="material_instructions">
+           <div class="inner">
+             <div class="copy">Select a different material</div>
+           </div>
+         </div>
+
+         <div class="instructions move" data-ref="move_instructions">
+           <div class="inner">
+             <div class="tap"></div>
+             <div class="copy">Tap on the floor to move around</div>
+           </div>
+         </div>
+       </div>
+
+       <div class="loading">
+         <div class="background"></div>
+         <div class="inner">
+           <div class="border" data-ref="border"></div>
+           <div class="panel-container" data-ref="panel_container">
+             <div class="panel" data-ref="panel">
+
+               <div class="main" data-ref="titlescreen_main">
+                 <div class="illustration" data-ref="titlescreen_illustration"></div>
+                 <div class="main-content">
+                   <h1 class="title">WebVR Showroom</h1>
+                   <p class="copy">Step inside a virtual showroom built with <strong>WebGL</strong> and <strong>WebVR</strong>. <br/><a href="#about" data-ref="about_link">More info</a></p>
+                   <div class="warning"></div>
+                   <div class="progress" data-ref="progress"><span class="text">Loading</span><span class="percentage">0</span>%</div>
+                   <div class="start" data-ref="start">Enter the showroom</div>
+                 </div>
+               </div>
+
+  </body>
 </html>
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Exploration</title>
+<link rel="stylesheet" type="text/css href="style.css">
+<script src="pointerlockCex.js"></script>
+<script src="three.module.js"></script>
+<script src="three.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>
+    <a href="https://showroom.littleworkshop.fr/"> "WebVR Showroom"</a>
+    </h1>
+    <p> I want my experience to look simple yet help the audience imagine they are in the scene as well, which is why I liked WebVR showroom <br>
+      I wrote down the instruction features because it would direct the user on how to interact with the website.</p>
+  <div class="instructions-container">
+       <div class="instructions look" data-ref="look_instructions">
+         <div class="inner">
+           <div class="hand"></div>
+           <div class="copy">Click and drag to look around</div>
+         </div>
+       </div>
+
+       <div class="instructions material" data-ref="material_instructions">
+         <div class="inner">
+           <div class="copy">Select a different material</div>
+         </div>
+       </div>
+
+       <div class="instructions move" data-ref="move_instructions">
+         <div class="inner">
+           <div class="tap"></div>
+           <div class="copy">Tap on the floor to move around</div>
+         </div>
+       </div>
+     </div>
+
+     <div class="loading">
+       <div class="background"></div>
+       <div class="inner">
+         <div class="border" data-ref="border"></div>
+         <div class="panel-container" data-ref="panel_container">
+           <div class="panel" data-ref="panel">
+
+             <div class="main" data-ref="titlescreen_main">
+               <div class="illustration" data-ref="titlescreen_illustration"></div>
+               <div class="main-content">
+                 <h1 class="title">WebVR Showroom</h1>
+                 <p class="copy">Step inside a virtual showroom built with <strong>WebGL</strong> and <strong>WebVR</strong>. <br/><a href="#about" data-ref="about_link">More info</a></p>
+                 <div class="warning"></div>
+                 <div class="progress" data-ref="progress"><span class="text">Loading</span><span class="percentage">0</span>%</div>
+                 <div class="start" data-ref="start">Enter the showroom</div>
+               </div>
+             </div>
+
+  </body>
+  <!- const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+  const renderer = new THREE.WebGLRenderer();
+  renderer.setSize( window.innerWidth, window.innerHeight );
+  document.body.appendChild( renderer.domElement ); -->
+</html> ->
