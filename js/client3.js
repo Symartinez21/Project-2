@@ -4,20 +4,20 @@
 
 // Import required source code
 // Import three.js core
-import * as THREE from "/three.module.js";
+import * as THREE from "./three.module.js";
 
 // Import pointer lock controls
-import { PointerLockControls } from "PointerLockControls.js";
+import { PointerLockControls } from "./PointerLockControls.js";
 
-import { GLTFLoader } from 'GLTFLoader.js';
+import { GLTFLoader } from './GLTFLoader.js';
 
 // Establish variables
 let camera, scene, renderer, controls;
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+scene = new THREE.Scene();
+camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-const renderer = new THREE.WebGLRenderer();
+renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
@@ -189,7 +189,30 @@ function init() {
 
   // Insert completed floor into the scene
   scene.add(floor);
+  var mesh;
+  const loader = new GLTFLoader();
 
+  loader.load( '../assets/Environment.glb',
+   function ( gltf ) {
+
+     gltf.scene.traverse(function(child) {
+       if (child.isMesh) {
+         //child.material = newMaterial;
+       }
+     });
+     // set position and scale
+     mesh = gltf.scene;
+     mesh.position.set(0, 0, 0);
+     mesh.rotation.set(45, 0, 0);
+     mesh.scale.set(.2, .2, .2); // <-- change this to (1, 1, 1) for photogrammetery model
+     // Add model to scene
+     scene.add(mesh);
+
+  }, undefined, function ( error ) {
+
+  	console.error( error );
+
+  } );
 
   // // Generate objects (cubes)
   // const boxGeometry = new THREE.BoxGeometry(20, 20, 20).toNonIndexed();
@@ -248,26 +271,26 @@ function onWindowResize() {
 }
 
 // // Animation function
-// function animate() {
-//   requestAnimationFrame(animate);
-//
-//   const time = performance.now();
-//
-//   // Check for controls being activated (locked) and animate scene according to controls
-//   if (controls.isLocked === true) {
-//     raycaster.ray.origin.copy(controls.getObject().position);
-//     raycaster.ray.origin.y -= 10;
-//
-//     const intersections = raycaster.intersectObjects(objects, false);
-//
-//     const onObject = intersections.length > 0;
-//
-//     const delta = (time - prevTime) / 1000;
-//
-//     velocity.x -= velocity.x * 10.0 * delta;
-//     velocity.z -= velocity.z * 10.0 * delta;
-//
-//     velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
+function animate() {
+  requestAnimationFrame(animate);
+
+  const time = performance.now();
+
+  // Check for controls being activated (locked) and animate scene according to controls
+  if (controls.isLocked === true) {
+    raycaster.ray.origin.copy(controls.getObject().position);
+    raycaster.ray.origin.y -= 10;
+
+    const intersections = raycaster.intersectObjects(objects, false);
+
+    const onObject = intersections.length > 0;
+
+    const delta = (time - prevTime) / 1000;
+
+    velocity.x -= velocity.x * 10.0 * delta;
+    velocity.z -= velocity.z * 10.0 * delta;
+
+    velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
 
     direction.z = Number(moveForward) - Number(moveBackward);
     direction.x = Number(moveRight) - Number(moveLeft);
@@ -276,10 +299,10 @@ function onWindowResize() {
     if (moveForward || moveBackward) velocity.z -= direction.z * 400.0 * delta;
     if (moveLeft || moveRight) velocity.x -= direction.x * 400.0 * delta;
 
-    if (onObject === true) {
-      velocity.y = Math.max(0, velocity.y);
-      canJump = true;
-    }
+    // if (onObject === true) {
+    //   velocity.y = Math.max(0, velocity.y);
+    //   canJump = true;
+    // }
 
     controls.moveRight(-velocity.x * delta);
     controls.moveForward(-velocity.z * delta);
@@ -293,6 +316,7 @@ function onWindowResize() {
       canJump = true;
     }
   }
+
 
   prevTime = time;
 

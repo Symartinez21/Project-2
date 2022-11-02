@@ -1,15 +1,15 @@
-const loader = new GLTFLoader();
-
-loader.load( '../source/Environment.glb',
- function ( gltf ) {
-
-	scene.add( gltf.scene );
-
-}, undefined, function ( error ) {
-
-	console.error( error );
-
-} );
+// const loader = new GLTFLoader();
+//
+// loader.load( '../source/Environment.glb',
+//  function ( gltf ) {
+//
+// 	scene.add( gltf.scene );
+//
+// }, undefined, function ( error ) {
+//
+// 	console.error( error );
+//
+// } );
 
 import {
 	AnimationClip,
@@ -74,7 +74,7 @@ import {
 	Vector3,
 	VectorKeyframeTrack,
 	sRGBEncoding
-} from 'three.module.js';
+} from './three.module.js';
 
 var GLTFLoader = ( function () {
 
