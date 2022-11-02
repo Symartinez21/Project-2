@@ -192,7 +192,7 @@ function init() {
   var mesh;
   const loader = new GLTFLoader();
 
-  loader.load( '../assets/Environment.glb',
+  loader.load( './assets/Environment.glb',
    function ( gltf ) {
 
      gltf.scene.traverse(function(child) {
