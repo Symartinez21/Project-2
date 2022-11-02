@@ -1,6 +1,7 @@
 const loader = new GLTFLoader();
 
-loader.load( 'Environment.glb', function ( gltf ) {
+loader.load( '../source/Environment.glb',
+ function ( gltf ) {
 
 	scene.add( gltf.scene );
 
