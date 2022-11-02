@@ -1,0 +1,205 @@
+# Blender MTL File: 'Environment.blend'
+# Material Count: 19
+
+newmtl Apple_Texture
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Apple_Texture.001
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Appletree_Bark
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Appletree_Bark.001
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Cliffs
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.159961 0.159961 0.159961
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\aerial_rocks_02_nor_gl_1k.jpg
+
+newmtl Leaf_Texture
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Leaf_Texture.001
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Material
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.159961 0.159961 0.159961
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\bark_brown_02_nor_gl_1k.jpg
+
+newmtl Material.001
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.159961 0.159961 0.159961
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\aerial_rocks_02_nor_gl_1k.jpg
+
+newmtl Material.002
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.159961 0.159961 0.159961
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\forest_ground_04_nor_gl_1k.jpg
+
+newmtl Material.003
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.159961 0.159961 0.159961
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\aerial_rocks_02_nor_gl_1k.jpg
+
+newmtl Material.006
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -s 2.200000 8.799999 1.000000 C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\aerial_rocks_02_nor_gl_1k.jpg
+
+newmtl Material.009
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.159961 0.159961 0.159961
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\aerial_rocks_02_nor_gl_1k.jpg
+
+newmtl Material.010
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.159961 0.159961 0.159961
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\aerial_rocks_02_nor_gl_1k.jpg
+
+newmtl Material.012
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.286522 0.286522 0.286522
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\forest_ground_04_nor_gl_1k.jpg
+
+newmtl Terrain
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -s 2.200000 8.799999 1.000000 C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\aerial_rocks_02_nor_gl_1k.jpg
+
+newmtl boulder_terrain
+Ns 900.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -s 2.200000 8.799999 1.000000 C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\aerial_rocks_02_nor_gl_1k.jpg
+
+newmtl boulders
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -s 2.200000 8.799999 1.000000 C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\aerial_rocks_02_nor_gl_1k.jpg
+
+newmtl texture_floor
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.286522 0.286522 0.286522
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Sophi\\Documents\\SJSU\\Fall 2022\\Art109\\Project-2\\source\\forest_ground_04_nor_gl_1k.jpg
