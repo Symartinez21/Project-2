@@ -8,6 +8,8 @@ import * as THREE from "three.module.js";
 // Import pointer lock controls
 import { PointerLockControls } from "PointerLockControls.js";
 
+import { GLTFLoader } from 'GLTFLoader.js';
+
 // Establish variables
 let camera, scene, renderer, controls;
 
