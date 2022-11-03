@@ -145,43 +145,16 @@ function init() {
   );
 
   // Generate the ground
-  // let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);
-  // floorGeometry.rotateX(-Math.PI / 2);
-  //
-  // // Vertex displacement pattern for ground
-  // let position = floorGeometry.attributes.position;
-  //
-  // for (let i = 0, l = position.count; i < l; i++) {
-  //   vertex.fromBufferAttribute(position, i);
-  //
-  //   vertex.x += Math.random() * 20 - 10;
-  //   vertex.y += Math.random() * 2;
-  //   vertex.z += Math.random() * 20 - 10;
-  //
-  //   position.setXYZ(i, vertex.x, vertex.y, vertex.z);
-  // }
-  //
-  // floorGeometry = floorGeometry.toNonIndexed(); // ensure each face has unique vertices
-  //
-  // position = floorGeometry.attributes.position;
-  // const colorsFloor = [];
-  //
-  // for (let i = 0, l = position.count; i < l; i++) {
-  //   color.setHSL(Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.25 + 0.75);
-  //   colorsFloor.push(color.r, color.g, color.b);
-  // }
-  //
-  // floorGeometry.setAttribute(
-  //   "color",
-  //   new THREE.Float32BufferAttribute(colorsFloor, 3)
-  // );
-  //
-  // const floorMaterial = new THREE.MeshBasicMaterial({ vertexColors: true });
-  //
-  // const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-  //
-  // // Insert completed floor into the scene
-  // scene.add(floor);
+  let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);
+  floorGeometry.rotateX(-Math.PI / 2);
+
+  const floorMaterial = new THREE.MeshBasicMaterial({color: 0xe0e0e0});
+  const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+
+  // Insert completed floor into the scene
+  scene.add(floor);
+
+
   var mesh;
   const loader = new GLTFLoader();
 
@@ -207,44 +180,6 @@ function init() {
   	console.error( error );
 
   } );
-
-  // // Generate objects (cubes)
-  // const boxGeometry = new THREE.BoxGeometry(20, 20, 20).toNonIndexed();
-  //
-  // position = boxGeometry.attributes.position;
-  // const colorsBox = [];
-  //
-  // for (let i = 0, l = position.count; i < l; i++) {
-  //   color.setHSL(Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.25 + 0.75);
-  //   colorsBox.push(color.r, color.g, color.b);
-  // }
-  //
-  // boxGeometry.setAttribute(
-  //   "color",
-  //   new THREE.Float32BufferAttribute(colorsBox, 3)
-  // );
-  //
-  // for (let i = 0; i < 500; i++) {
-  //   const boxMaterial = new THREE.MeshPhongMaterial({
-  //     specular: 0xffffff,
-  //     flatShading: true,
-  //     vertexColors: true
-  //   });
-  //   boxMaterial.color.setHSL(
-  //     Math.random() * 0.2 + 0.5,
-  //     0.75,
-  //     Math.random() * 0.25 + 0.75
-  //   );
-  //
-  //   const box = new THREE.Mesh(boxGeometry, boxMaterial);
-  //   box.position.x = Math.floor(Math.random() * 20 - 10) * 20;
-  //   box.position.y = Math.floor(Math.random() * 20) * 20 + 10;
-  //   box.position.z = Math.floor(Math.random() * 20 - 10) * 20;
-  //
-  //   // Insert completed boxes into the scene
-  //   scene.add(box);
-  //   objects.push(box);
-  // }
 
   // Define Rendered and html document placement
   renderer = new THREE.WebGLRenderer({ antialias: true });
