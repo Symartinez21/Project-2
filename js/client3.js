@@ -14,13 +14,6 @@ import { GLTFLoader } from './GLTFLoader.js';
 // Establish variables
 let camera, scene, renderer, controls;
 
-scene = new THREE.Scene();
-camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
-
 const objects = [];
 let raycaster;
 
@@ -192,7 +185,7 @@ function init() {
   var mesh;
   const loader = new GLTFLoader();
 
-  loader.load( './assets/Environment_2.glb',
+  loader.load( './assets/EnvironmentwTextures.glb',
    function ( gltf ) {
 
      gltf.scene.traverse(function(child) {
@@ -202,11 +195,12 @@ function init() {
      });
      // set position and scale
      mesh = gltf.scene;
-     mesh.position.set(0, 0, 0);
+     mesh.position.set(0, -8, 0);
      mesh.rotation.set(0, 0, 0);
-     mesh.scale.set(.2, .2, .2); // <-- change this to (1, 1, 1) for photogrammetery model
+     mesh.scale.set(1, 1, 1); // <-- change this to (1, 1, 1) for photogrammetery model
      // Add model to scene
      scene.add(mesh);
+     objects.push(mesh)
 
   }, undefined, function ( error ) {
 
