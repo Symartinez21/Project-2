@@ -148,7 +148,7 @@ function init() {
   let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);
   floorGeometry.rotateX(-Math.PI / 2);
 
-  const floorMaterial = new THREE.MeshBasicMaterial({color: 0xe0e0e0});
+  const floorMaterial = new THREE.MeshBasicMaterial({color: 0x4281f5});
   const floor = new THREE.Mesh(floorGeometry, floorMaterial);
 
   // Insert completed floor into the scene
@@ -208,12 +208,12 @@ function animate() {
   // Check for controls being activated (locked) and animate scene according to controls
   if (controls.isLocked === true) {
     raycaster.ray.origin.copy(controls.getObject().position);
-    raycaster.ray.origin.y -= 10;
+    //raycaster.ray.origin.y -= 10;
 
     const intersections = raycaster.intersectObjects(objects, true);
 
     const onObject = intersections.length > 0;
-    console.log(onObject);
+
 
     const delta = (time - prevTime) / 1000;
 
