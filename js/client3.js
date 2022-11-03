@@ -14,7 +14,7 @@ import { GLTFLoader } from './GLTFLoader.js';
 // Establish variables
 let camera, scene, renderer, controls;
 
-const objects = [];
+let objects = [];
 let raycaster;
 
 let moveForward = false;
@@ -145,43 +145,43 @@ function init() {
   );
 
   // Generate the ground
-  let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);
-  floorGeometry.rotateX(-Math.PI / 2);
-
-  // Vertex displacement pattern for ground
-  let position = floorGeometry.attributes.position;
-
-  for (let i = 0, l = position.count; i < l; i++) {
-    vertex.fromBufferAttribute(position, i);
-
-    vertex.x += Math.random() * 20 - 10;
-    vertex.y += Math.random() * 2;
-    vertex.z += Math.random() * 20 - 10;
-
-    position.setXYZ(i, vertex.x, vertex.y, vertex.z);
-  }
-
-  floorGeometry = floorGeometry.toNonIndexed(); // ensure each face has unique vertices
-
-  position = floorGeometry.attributes.position;
-  const colorsFloor = [];
-
-  for (let i = 0, l = position.count; i < l; i++) {
-    color.setHSL(Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.25 + 0.75);
-    colorsFloor.push(color.r, color.g, color.b);
-  }
-
-  floorGeometry.setAttribute(
-    "color",
-    new THREE.Float32BufferAttribute(colorsFloor, 3)
-  );
-
-  const floorMaterial = new THREE.MeshBasicMaterial({ vertexColors: true });
-
-  const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-
-  // Insert completed floor into the scene
-  scene.add(floor);
+  // let floorGeometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);
+  // floorGeometry.rotateX(-Math.PI / 2);
+  //
+  // // Vertex displacement pattern for ground
+  // let position = floorGeometry.attributes.position;
+  //
+  // for (let i = 0, l = position.count; i < l; i++) {
+  //   vertex.fromBufferAttribute(position, i);
+  //
+  //   vertex.x += Math.random() * 20 - 10;
+  //   vertex.y += Math.random() * 2;
+  //   vertex.z += Math.random() * 20 - 10;
+  //
+  //   position.setXYZ(i, vertex.x, vertex.y, vertex.z);
+  // }
+  //
+  // floorGeometry = floorGeometry.toNonIndexed(); // ensure each face has unique vertices
+  //
+  // position = floorGeometry.attributes.position;
+  // const colorsFloor = [];
+  //
+  // for (let i = 0, l = position.count; i < l; i++) {
+  //   color.setHSL(Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.25 + 0.75);
+  //   colorsFloor.push(color.r, color.g, color.b);
+  // }
+  //
+  // floorGeometry.setAttribute(
+  //   "color",
+  //   new THREE.Float32BufferAttribute(colorsFloor, 3)
+  // );
+  //
+  // const floorMaterial = new THREE.MeshBasicMaterial({ vertexColors: true });
+  //
+  // const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+  //
+  // // Insert completed floor into the scene
+  // scene.add(floor);
   var mesh;
   const loader = new GLTFLoader();
 
@@ -190,17 +190,17 @@ function init() {
 
      gltf.scene.traverse(function(child) {
        if (child.isMesh) {
+         objects.push(child);
          //child.material = newMaterial;
        }
      });
      // set position and scale
      mesh = gltf.scene;
-     mesh.position.set(0, -8, 0);
+     mesh.position.set(0, 0, 0);
      mesh.rotation.set(0, 0, 0);
      mesh.scale.set(1, 1, 1); // <-- change this to (1, 1, 1) for photogrammetery model
      // Add model to scene
      scene.add(mesh);
-     objects.push(mesh)
 
   }, undefined, function ( error ) {
 
@@ -275,9 +275,10 @@ function animate() {
     raycaster.ray.origin.copy(controls.getObject().position);
     raycaster.ray.origin.y -= 10;
 
-    const intersections = raycaster.intersectObjects(objects, false);
+    const intersections = raycaster.intersectObjects(objects, true);
 
     const onObject = intersections.length > 0;
+    console.log(onObject);
 
     const delta = (time - prevTime) / 1000;
 
@@ -293,10 +294,10 @@ function animate() {
     if (moveForward || moveBackward) velocity.z -= direction.z * 400.0 * delta;
     if (moveLeft || moveRight) velocity.x -= direction.x * 400.0 * delta;
 
-    // if (onObject === true) {
-    //   velocity.y = Math.max(0, velocity.y);
-    //   canJump = true;
-    // }
+    if (onObject === true) {
+      velocity.y = Math.max(0, velocity.y);
+      canJump = true;
+    }
 
     controls.moveRight(-velocity.x * delta);
     controls.moveForward(-velocity.z * delta);
