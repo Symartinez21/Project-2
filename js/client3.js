@@ -192,7 +192,7 @@ function init() {
   var mesh;
   const loader = new GLTFLoader();
 
-  loader.load( './assets/Environment.glb',
+  loader.load( './assets/Environment_2.glb',
    function ( gltf ) {
 
      gltf.scene.traverse(function(child) {
@@ -203,7 +203,7 @@ function init() {
      // set position and scale
      mesh = gltf.scene;
      mesh.position.set(0, 0, 0);
-     mesh.rotation.set(45, 0, 0);
+     mesh.rotation.set(0, 0, 0);
      mesh.scale.set(.2, .2, .2); // <-- change this to (1, 1, 1) for photogrammetery model
      // Add model to scene
      scene.add(mesh);
