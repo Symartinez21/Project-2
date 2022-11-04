@@ -2,7 +2,7 @@ body {
   margin-top: 0;
   padding-top: 0;
   background-image: url("assets/cloudsdrift.gif");
-  background-color: CornflowerBlue;
+  background-color: RoyalBlue;
 }
 
 canvas {
@@ -15,7 +15,7 @@ canvas {
   border-radius: 3px;
 }
 
-h1 {
+h2 {
       text-decoration-thickness: auto;
       color: BurlyWood;
       font-size: 15px;
@@ -43,7 +43,7 @@ p.move-mid {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #FFA07A;
+  background-image: linear-gradient(to bottom right, IndianRed, LightSalmon);
 }
 
 #instructions {
